@@ -25,7 +25,14 @@
 		//markerIcon:{ url:'assets/svg/map-marker.svg' },
 		zoom:8 // change map zoom value
 	};
-            </script>
+            
+    function post_submit(){
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+    }
+    
+        </script>
         <!--End AAA Modification-->
         <!-- .style-panel -->
         <div class="style-panel" style="display:none">

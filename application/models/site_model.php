@@ -45,4 +45,13 @@ class Site_model extends CI_Model{
     function blog_item($id){
         return $this->db->get_where('articles',array('id'=>$id))->result()[0];
     }
+    
+    function add_comment($data){
+        $this->db->insert('comments',$data);
+    }
+    
+    function blog_item_comments($id){
+        return $this->db->get_where('comments',array('article_id'=>$id))->result();
+    }
+    
 }

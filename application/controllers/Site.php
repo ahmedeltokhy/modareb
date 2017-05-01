@@ -47,6 +47,7 @@ class Site extends CI_Controller {
 
     function portfolio() {
         $data['title'] = 'portfolio';
+        $data['data'] = $this->site_model->home();
         $data['portfolio'] = $this->site_model->get_portfolio();
         $this->load->view('header', $data);
         $this->load->view('portfolio',$data);
@@ -63,16 +64,18 @@ class Site extends CI_Controller {
     }
             function blog() {
         $data['title'] = 'blog';
+        $data['data'] = $this->site_model->home();
         $data['articles'] = $this->site_model->get_blog();
         $this->load->view('header', $data);
         $this->load->view('blog',$data);
         $this->load->view('footer',$data);
     }
 function blog_item($id = NULL){
- 
+   
         $data['title'] = 'portfolio item';
         $data['data'] = $this->site_model->home();
         $data['item_data'] = $this->site_model->blog_item($id);
+        $data['comments'] = $this->site_model->blog_item_comments($id);
         $this->load->view('header', $data);
         $this->load->view('blog_item',$data);
         $this->load->view('footer',$data);
@@ -85,5 +88,19 @@ function blog_item($id = NULL){
         $this->load->view('contact', $data);
         $this->load->view('footer', $data);
     }
-
+    function add_comment(){
+      $comment = array(
+        'name'=> $this->input->post('name'),
+        'email'=> $this->input->post('email'),
+        'message'=> $this->input->post('message'),
+        'article_id'=>$this->input->post('post_id'),
+    );
+    echo '<pre>';
+    print_r($this->input->post('name'));
+    print_r($comment);
+    echo '</pre>';
+    
+    $this->site_model->add_comment($comment);
+   redirect(site_url('site/blog_item/'.$comment['article_id']));
+    }
 }

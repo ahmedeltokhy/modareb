@@ -1,3 +1,8 @@
+<script type="text/javascript">
+  $(document).ready(function (){
+      alert('function'); 
+   });
+    </script>
 <div class="layout-container-main layout-container-width">
                 <!-- .layout-content -->
                 <div class="layout-content">
@@ -68,86 +73,49 @@
                             </div>-->
                             <!-- .comments -->
                             <div class="comments">
-                                <h3 class="comments__title">4 comments</h3>
+                                <!--<h3 class="comments__title">4 comments</h3>-->
                                 <div class="comments__items">
+                                  <?php
+                                  foreach ($comments as $comment):
+                                  ?>
                                     <!-- .comment-item -->
                                     <div class="comment-item">
                                         <div class="comment-item__info">
                                             <div class="comment-item__info__image-wrap">
-                                                <img src="uploads/comments/marinella.jpg" alt="">
+                                                <img style="width: 60px" src="<?= site_url('assets/uploads/Pic/ac2ab-default-user-image.png')?>" alt="">
                                             </div>
-                                            <div class="comment-item__info__name">Marinella Taranto</div>
-                                            <div class="comment-item__info__date">28 December 2014</div>
-                                            <div class="comment-item__info__reply"><a class="btn btn--style3" href="blog-single.html#">Reply</a></div>
+                                            <div class="comment-item__info__name"><?=$comment->name?></div>
+                                            <div class="comment-item__info__date"><?= date_format(date_create($comment->create_date), 'd F Y')?></div>
+                                            <!--<div class="comment-item__info__reply"><a class="btn btn--style3" href="blog-single.html#">Reply</a></div>-->
                                         </div>
-                                        <div class="comment-item__content">Nunc laoreet interdum diam in hendrerit. Duis maximus vitae sapien quis blandit. Nullam risus tellus, tincidunt eget vulputate at, convallis sed ligula. Duis erat mi, gravida commodo mollis vitae, rutrum at sem. Vestibulum varius eleifend enim, quis consequat orci iaculis non. Aliquam dignissim elit sed varius laoreet. </div>
+                                        <div class="comment-item__content"><?=$comment->message?></div>
                                     </div>
                                     <!-- end .comment-item -->
-                                    <!-- .comment-item -->
-                                    <div class="comment-item">
-                                        <div class="comment-item__info">
-                                            <div class="comment-item__info__image-wrap">
-                                                <img src="uploads/comments/ryan.jpg" alt="">
-                                            </div>
-                                            <div class="comment-item__info__name">Ryan Johnson</div>
-                                            <div class="comment-item__info__date">26 December 2014</div>
-                                            <div class="comment-item__info__reply"><a class="btn btn--style3" href="blog-single.html#">Reply</a></div>
-                                        </div>
-                                        <div class="comment-item__content">Aliquam interdum dapibus venenatis. Sed tempus suscipit imperdiet. Cras vitae lectus rutrum tortor euismod mattis. Etiam convallis lectus eu bibendum interdum. Etiam tempus justo nec nunc gravida, eget placerat arcu feugiat. Proin rutrum nulla sed aliquam sagittis. Duis vel tincidunt sapien.</div>
-                                        <!-- .comments__reply -->
-                                        <div class="comments__reply">
-                                            <!-- .comment-item -->
-                                            <div class="comment-item">
-                                                <div class="comment-item__info">
-                                                    <div class="comment-item__info__image-wrap">
-                                                        <img src="uploads/comments/marinella.jpg" alt="">
-                                                    </div>
-                                                    <div class="comment-item__info__name">Marinella Taranto</div>
-                                                    <div class="comment-item__info__date">26 December 2014</div>
-                                                    <div class="comment-item__info__reply"><a class="btn btn--style3" href="blog-single.html#">Reply</a></div>
-                                                </div>
-                                                <div class="comment-item__content">Nam ultrices neque arcu, et varius nisi tempor at. In hac habitasse platea dictumst.</div>
-                                            </div>
-                                            <!-- end .comment-item -->
-                                        </div>
-                                        <!-- end .comments__reply -->
-                                    </div>
-                                    <!-- end .comment-item -->
-                                    <!-- .comment-item -->
-                                    <div class="comment-item">
-                                        <div class="comment-item__info">
-                                            <div class="comment-item__info__image-wrap">
-                                                <img src="uploads/comments/sarah.jpg" alt="">
-                                            </div>
-                                            <div class="comment-item__info__name">Sarah Brown</div>
-                                            <div class="comment-item__info__date">10 December 2014</div>
-                                            <div class="comment-item__info__reply"><a class="btn btn--style3" href="blog-single.html#">Reply</a></div>
-                                        </div>
-                                        <div class="comment-item__content">Maecenas facilisis accumsan eros in gravida. Ut elit dui, vehicula sed lacinia non, sodales non erat. Suspendisse mollis, ex ut rhoncus imperdiet, lacus ipsum lobortis tellus, in fermentum sem lorem quis libero. Ut at ex neque. Pellentesque at quam velit. Suspendisse eleifend vestibulum justo ac ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras tempor vehicula justo, nec laoreet massa vehicula in. Suspendisse pharetra interdum dui. Phasellus interdum nisl arcu, ac fringilla ipsum interdum ac.</div>
-                                    </div>
-                                    <!-- end .comment-item -->
+                                  <?php endforeach; ?>
+                                   
                                 </div>
-                                <div class="comments__pagination">
+<!--                                <div class="comments__pagination">
                                     <ul class="comments__pagination__list">
-                                        <li><a class="comments__pagination__list__item-current" href="blog-single.html#">1</a></li>
-                                        <li><a href="blog-single.html#">2</a></li>
-                                        <li><a href="blog-single.html#">3</a></li>
+                                        <li><a class="comments__pagination__list__item-current" href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
                                     </ul>
-                                </div>
+                                </div>-->
                                 <div class="layout-horizontal-padding">
                                     <div class="comments__form">
                                         <h3 class="comments__form__title">leave a reply</h3>
-                                        <form onsubmit="return false;">
+                                        <form name="post_comment" action="<?= site_url('site/add_comment')?>" method="post">
+                                            <input id="post_id" value="<?=$item_data->id?>" name="post_id" type="hidden" />
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <input class="form__item" type="text" placeholder="name">
+                                                    <input name="name" id="name" class="form__item" required="required" type="text" placeholder="name">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input class="form__item" type="text" placeholder="email">
+                                                    <input id="email" name="email" class="form__item" required="required" type="email" placeholder="email">
                                                 </div>
                                             </div>
-                                            <textarea class="form__textarea form__item" placeholder="message"></textarea>
-                                            <button type="submit" class="btn btn-lg btn--style1">Post comment</button>
+                                            <textarea name="message" class="form__textarea form__item" required="required" id="message" placeholder="message"></textarea>
+                                            <input id="submit_post" type="submit" onclick="post_submit();" class="btn btn-lg btn--style1" value="Post comment" />
                                         </form>
                                     </div>
                                 </div>
@@ -162,3 +130,4 @@
                     <p class="footer__copyright">&copy; Rossi, 2015. All rights reserved.</p>
                 </div>
             </div>
+  
