@@ -15,7 +15,7 @@
                                 
                                  <div class="blog-post layout-row">
                                      <a class="blog-post__image-wrap" href="<?= site_url('site/blog_item/'.$item->id)?>">
-                                    <img class="blog-post__image" src="assets/uploads/articles/<?=$item->image?>" alt="">
+                                         <img class="blog-post__image" src="<?= site_url('assets/uploads/articles/'.$item->image)?>" alt="">
                                 </a>
                                 <div class="layout-container layout-horizontal-padding">
                                     <h2 class="blog-post__title"><a href="<?= site_url('site/blog_item/'.$item->id)?>"><?=$item->title?></a></h2>

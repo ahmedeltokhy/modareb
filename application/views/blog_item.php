@@ -13,7 +13,7 @@
                             </h1>
                         </div>
                         <div class="layout-row">
-                            <img class="blog-single__image" src="assets/uploads/articles/<?=$item_data->image?>" alt="">
+                            <img class="blog-single__image" src="<?= site_url('assets/uploads/articles/'.$item_data->image)?>" alt="">
                         </div>
                         <div class="blog-single__contents layout-horizontal-padding">
                             <h2 class="blog-single__title"><?=$item_data->title?></h2>
