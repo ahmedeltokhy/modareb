@@ -95,12 +95,25 @@ function blog_item($id = NULL){
         'message'=> $this->input->post('message'),
         'article_id'=>$this->input->post('post_id'),
     );
-    echo '<pre>';
-    print_r($this->input->post('name'));
-    print_r($comment);
-    echo '</pre>';
     
     $this->site_model->add_comment($comment);
    redirect(site_url('site/blog_item/'.$comment['article_id']));
     }
+    
+    function lang($lang='en'){
+        if ($lang == 'ar') {
+            set_cookie('lang', $lang, 60*60*24*30);
+        }
+ else {
+     set_cookie('lang', 'en', 60*60*24*30);
+ }
+ if ($this->agent->is_referral())
+{
+     redirect($this->agent->referrer());
+}
+ else {
+    redirect(site_url());    
+}
+    }
+    
 }
