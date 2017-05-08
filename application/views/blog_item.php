@@ -9,17 +9,17 @@
                     <section class="blog-single">
                         <div class="layout-title-wrapper layout-row">
                             <h1 class="layout-title layout-container-width layout-container">blog.
-                                <span class="layout-title__subtitle"><?=$item_data->title?></span>
+                                <span class="layout-title__subtitle"><?=get_cookie('lang')=='ar'?$item_data->title_ar:$item_data->title?></span>
                             </h1>
                         </div>
                         <div class="layout-row">
                             <img class="blog-single__image" src="<?= site_url('assets/uploads/articles/'.$item_data->image)?>" alt="">
                         </div>
                         <div class="blog-single__contents layout-horizontal-padding">
-                            <h2 class="blog-single__title"><?=$item_data->title?></h2>
+                            <h2 class="blog-single__title"><?=get_cookie('lang')=='ar'?$item_data->title_ar:$item_data->title?></h2>
                             <ul class="blog-post__article-info">
                                 <li>
-                                    <a href="blog-single.html#">
+                                    <a href="#">
                                         <i class="fa fa-calendar"></i><?= date_format(date_create($item_data->create_date), "d F Y")?></a>
                                 </li>
 <!--                                <li>
@@ -27,8 +27,8 @@
                                         <i class="fa fa-folder-open"></i>work</a>
                                 </li>-->
                                 <li>
-                                    <a href="blog-single.html#">
-                                        <i class="fa fa-tags"></i><?=$item_data->field?></a>
+                                    <a href="#">
+                                        <i class="fa fa-tags"></i><?=get_cookie('lang')=='ar'?$item_data->field_ar:$item_data->field?></a>
                                 </li>
 <!--                                <li>
                                     <a href="blog-single.html#">
@@ -36,7 +36,7 @@
                                 </li>-->
                             </ul>
                             <div class="blog-single__content">
-                                <p><?=$item_data->content?> </p>
+                                <p><?=get_cookie('lang')=='ar'?$item_data->content_ar:$item_data->content?> </p>
                             </div>
 <!--                            <div class="layout-horizontal-padding">
                                 <div class="post-navigation">
@@ -51,7 +51,7 @@
                                 </div>
                             </div>-->
                             <div class="share-box">
-                                <h3 class="share-box__title">Share</h3>
+                                <h3 class="share-box__title"><?=get_cookie('lang')=='ar'?'مشاركة':'Share'?></h3>
                                 <div id="shareBoxContainer" class="share-box__items-contaner">
                                     <div class="share-box__item share-box__item--facebook" data-btntype="facebook" data-title="&nbsp;"></div>
                                     <div class="share-box__item share-box__item--twitter" data-btntype="twitter" data-title="&nbsp;"></div>
@@ -103,7 +103,7 @@
                                 </div>-->
                                 <div class="layout-horizontal-padding">
                                     <div class="comments__form">
-                                        <h3 class="comments__form__title">leave a reply</h3>
+                                        <h3 class="comments__form__title"><?=get_cookie('lang')=='ar'?'اترك تعليقك':'leave a reply'?></h3>
                                         <form name="post_comment" action="<?= site_url('site/add_comment')?>" method="post">
                                             <input id="post_id" value="<?=$item_data->id?>" name="post_id" type="hidden" />
                                             <div class="row">

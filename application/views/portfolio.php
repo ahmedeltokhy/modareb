@@ -3,8 +3,8 @@
                 <div class="layout-content">
                     <section class="page-portfolio">
                         <div class="layout-title-wrapper layout-row">
-                            <h1 class="layout-title layout-container-width layout-container">Portfolio.
-                                <span class="layout-title__subtitle">My photography</span>
+                            <h1 class="layout-title layout-container-width layout-container"><?=get_cookie('lang')=='ar'?'الاعمال':'Portfolio.'?>
+                                <!--<span class="layout-title__subtitle">My photography</span>-->
                             </h1>
                         </div>
                         <div class="page-portfolio__items-container layout-row">
@@ -18,9 +18,9 @@
                                         <img class="page-portfolio__image" src="assets/uploads/portfolio/cover/<?=$item->cover_pic?>" alt="<?=$item->title?>">
                                     </a>
                                     <div class="page-portfolio__item__info">
-                                        <h2 class="page-portfolio__item__title"><?=$item->title?></h2>
-                                        <div class="page-portfolio__item__content"><?=$item->cover_text?></div>
-                                        <a class="btn btn-lg btn--style2" href="<?=site_url('site/portfolio_item/'.$item->id)?>">See More <i class="fa fa-arrow-right"></i></a>
+                                        <h2 class="page-portfolio__item__title"><?=get_cookie('lang')=='ar'?$item->title_ar:$item->title?></h2>
+                                        <div class="page-portfolio__item__content"><?=get_cookie('lang')=='ar'?$item->cover_text_ar:$item->cover_text?></div>
+                                        <a class="btn btn-lg btn--style2" href="<?=site_url('site/portfolio_item/'.$item->id)?>"><?=get_cookie('lang')=='ar'?'إقرأ المزيد':'See More'?> <i class="fa fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +29,7 @@
                     </section>
                 </div>
                 <!-- end .layout-content -->
-                <div class="footer--bottom layout-row">
+<!--                <div class="footer--bottom layout-row">
                     <p class="footer__copyright">&copy; Rossi, 2015. All rights reserved.</p>
                 </div>
-            </div>
+            </div>-->

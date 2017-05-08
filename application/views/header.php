@@ -10,16 +10,26 @@
         <link rel="stylesheet" type="text/css" href="<?= site_url()?>assets/csslib/icomoon.css">
         <link rel="stylesheet" type="text/css" href="<?= site_url()?>assets/csslib/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" type="text/css" href="<?= site_url()?>assets/css/bootstrap-custom.css">
-        <link rel="stylesheet" type="text/css" id="savvyStyle" href="<?= site_url()?>assets/css/main-skin-style5.css">
+        <link rel="stylesheet" type="text/css" id="savvyStyle" href="<?= site_url()?>assets/css/<?=get_cookie('lang')=='ar'?'main-skin-style5_ar.css':'main-skin-style5.css'?>">
         <!-- end stylesheets -->
     </head>
     <body class="layout-body layout-body--home">
+        <div class="fixedLeft lang">
+            <?php if (get_cookie('lang')=='ar'):?>
+            <a href="<?= site_url('site/lang/en') ?>"><img src="<?= site_url('assets/images/en_lang.png') ?>" /></a>
+            <?php else: ?>
+            <a href="<?= site_url('site/lang/ar') ?>"><img src="<?= site_url('assets/images/ar_lang.png') ?>" /></a>
+            <?php endif; ?>
+            
+            
+        </div> 
         <!-- .layout -->
         <div class="layout layout-width">
             <div class="layout-anti-scroll layout-anti-scroll--active layout-width"></div>
             <!-- .layout-header -->
             <div class="layout-header layout-width">
                 <header>
+                   
                     <div id="headerMenuSlidingElement" class="main-nav__sliding-element"></div>
                     <ul class="main-nav">
                         <li class="main-nav__item <?=($title == 'home')?'main-nav__item--active':'';?> ">
@@ -27,7 +37,7 @@
                                 <span class="main-nav__item-icon-wrapper">
                                     <i class="main-nav__item-icon icon-home"></i>
                                 </span>
-                                <span class="main-nav__item-content">Home</span>
+                                <span class="main-nav__item-content"><?=get_cookie('lang')=='ar'?'الرئيسية':'Home'?></span>
                             </a>
                         </li>
                         <li class="main-nav__item <?=($title == 'resume')?'main-nav__item--active':'';?>">
@@ -35,7 +45,7 @@
                                 <span class="main-nav__item-icon-wrapper">
                                     <i class="main-nav__item-icon icon-profile"></i>
                                 </span>
-                                <span class="main-nav__item-content">Resume</span>
+                                <span class="main-nav__item-content"><?=get_cookie('lang')=='ar'?'السيرة الذاتية':'Resume'?></span>
                             </a>
                         </li>
                         <li class="main-nav__item <?=($title == 'services')?'main-nav__item--active':'';?>">
@@ -43,7 +53,7 @@
                                 <span class="main-nav__item-icon-wrapper">
                                     <i class="main-nav__item-icon icon-stats-bars2"></i>
                                 </span>
-                                <span class="main-nav__item-content">Services</span>
+                                <span class="main-nav__item-content"><?=get_cookie('lang')=='ar'?'خدمات':'Services'?></span>
                             </a>
                         </li>
                         <li class="main-nav__item <?=($title == 'portfolio')?'main-nav__item--active':'';?>">
@@ -51,7 +61,7 @@
                                 <span class="main-nav__item-icon-wrapper">
                                     <i class="main-nav__item-icon icon-books"></i>
                                 </span>
-                                <span class="main-nav__item-content">Portfolio</span>
+                                <span class="main-nav__item-content"><?=get_cookie('lang')=='ar'?'الأعمال':'Portfolio'?></span>
                             </a>
                         </li>
                         <li class="main-nav__item <?=($title == 'blog')?'main-nav__item--active':'';?>">
@@ -59,7 +69,7 @@
                                 <span class="main-nav__item-icon-wrapper">
                                     <i class="main-nav__item-icon icon-blog"></i>
                                 </span>
-                                <span class="main-nav__item-content">Blog</span>
+                                <span class="main-nav__item-content"><?=get_cookie('lang')=='ar'?'مقالات':'Blog'?></span>
                             </a>
                         </li>
                         <li class="main-nav__item <?=($title == 'contact')?'main-nav__item--active':'';?>">
@@ -67,7 +77,7 @@
                                 <span class="main-nav__item-icon-wrapper">
                                     <i class="main-nav__item-icon icon-envelop"></i>
                                 </span>
-                                <span class="main-nav__item-content">Contact</span>
+                                <span class="main-nav__item-content"><?=get_cookie('lang')=='ar'?'اتصل بنا':'Contact'?></span>
                             </a>
                         </li>
                     </ul>
@@ -86,10 +96,10 @@
             <div class="layout-sidebar layout-sidebar-width">
                 <!-- .sidebar -->
                 <div class="sidebar">
-                    <div class="sidebar__site-name"><?=$data->Name?></div>
+                    <div class="sidebar__site-name"><?=get_cookie('lang')=='ar'?$data->Name_ar:$data->Name?></div>
                     <div class="widget">
                         <ul class="widget__list">
-                            <li><?=$data->speciality?></li>
+                            <li><?=get_cookie('lang')=='ar'?$data->speciality_ar:$data->speciality?></li>
 <!--                            <li>photographer</li>
                             <li>soccer fan</li>
                             <li>father of two</li>-->
@@ -125,7 +135,7 @@
                     </ul>
                     <!-- end .social-icons -->
                     <footer class="footer">
-                        <p class="footer__copyright">&copy; <?=$data->Name?>, 2015. All rights reserved.</p>
+                        <p class="footer__copyright">&copy; <?=get_cookie('lang')=='ar'?$data->Name_ar.', 2017. جميع الحقوق محفوظة.':$data->Name.', 2017. All rights reserved.'?></p>
                     </footer>
                 </div>
                 <!-- end .sidebar -->

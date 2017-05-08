@@ -4,9 +4,9 @@
                     <section class="page-home layout-row">
                         <div class="row">
                             <div class="col-md-6">
-                                <h1 class="page-home__page-title"><?=$data->Name?></h1>
+                                <h1 class="page-home__page-title"><?=get_cookie('lang')=='ar'?$data->Name_ar:$data->Name?></h1>
                                 <div class="page-home__text">
-                                    <p><?=$data->About?></p>
+                                    <p><?=get_cookie('lang')=='ar'?$data->about_ar:$data->About?></p>
                                 </div>
                             </div>
                             <div class="col-md-6 page-home__thumbnail-wrap">
@@ -21,7 +21,7 @@
                     </section>
                 </div>
                 <!-- end .layout-content -->
-                <div class="footer--bottom layout-row">
+<!--                <div class="footer--bottom layout-row">
                     <p class="footer__copyright">&copy; Rossi, 2015. All rights reserved.</p>
                 </div>
-            </div>
+            </div>-->
