@@ -12,7 +12,7 @@ var Template = {
 	},
 
 	// set to true to disable ajax pages loading
-	disableAjaxNavigation:false,
+	disableAjaxNavigation:true,
 
 	/**
 	 * Main init function
@@ -373,7 +373,7 @@ Template.menu = {
 	currenMenuItemClass:'main-nav__item--active',
 	pageClassContainerSelector: '.layout-body',
 
-	disableAjaxNavigation:true,
+	disableAjaxNavigation:false,
 
 	/**
 	 * Contains values for location.hash that should not be loaded via ajax.
