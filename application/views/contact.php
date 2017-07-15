@@ -7,10 +7,7 @@
                                 <span class="layout-title__subtitle"><?=get_cookie('lang')=='ar'?'تود زيارتى؟':'Wanna talk to me?'?></span>
                             </h1>
                         </div>
-                        <div class="layout-row">
-                            <div id="savvyMapCanvas" class="google-map--contact"></div>
-                        </div>
-                        <!-- #contactForm -->
+                                                <!-- #contactForm -->
                         <form action="http://oleg.dev/savvy/www/mail/fake.js" id="contactForm" method="post" class="layout-horizontal-padding">
                             <div class="row">
                                 <div class="col-md-6">
@@ -49,6 +46,10 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="layout-row">
+                            <div id="savvyMapCanvas" class="google-map--contact"></div>
+                        </div>
+
                     </section>
                 </div>
                 <!-- end .layout-content -->

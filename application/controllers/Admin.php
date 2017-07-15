@@ -28,6 +28,7 @@ class Admin extends CI_Controller {
         $crud->set_subject("مؤلف");
         $crud->unset_add();
         $crud->unset_delete();
+        $crud->set_relation('color','color',' name');
 //        $crud->display_as('UserName', 'إسم المستخدم');
 //        $crud->display_as('Name', 'الإسم');
 //        $crud->display_as('speciality', 'التخصص');
@@ -69,7 +70,8 @@ function articles(){
         $crud->set_table('articles');
         
         $crud->set_subject('مقال');
-        
+        $crud->columns('title','title_ar','content_ar','field_ar','content','image','field','author_id','sort_id','comments','create_date','update_date');
+        $crud->callback_column('comments', array($this,'callback_comments'));
         $crud->unset_fields('create_date','update_date');
         
         $crud->set_field_upload('image', 'assets/uploads/articles');
@@ -79,10 +81,12 @@ function articles(){
         $this->load->view('admin', $output);
         
     }
-    
-    function comments(){
+    function callback_comments($value,$row){
+        return "<a href='".site_url('admin/comments/'.$row->id)."'>Comments</a>";
+    }
+            function comments($article_id){
         $crud = new Grocery_CRUD();
-        
+        $crud->where('article_id',$article_id);
         $crud->set_table('comments');
         
         $crud->set_subject('إنجاز');

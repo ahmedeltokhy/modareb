@@ -853,7 +853,7 @@ textarea {
   margin-bottom: 10px;
 }
 .share-box__item .count {
-  display: inline-block;
+  /*AAA*/display: none;
   margin-top: 8px;
   margin-left: 20px;
   padding: 5px 10px;

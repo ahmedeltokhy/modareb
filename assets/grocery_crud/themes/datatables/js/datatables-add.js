@@ -139,5 +139,9 @@ $(function(){
 
 		$('.chosen-multiple-select, .chosen-select, .ajax-chosen-select').each(function(){
 			$(this).trigger("liszt:updated");
+                        $('.form-input-box').find('.chosen-single span').each(function (){
+                            this.innerText = '';
+                        });
+                        window.location.reload();
 		});
 	}

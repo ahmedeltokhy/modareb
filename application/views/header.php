@@ -10,15 +10,15 @@
         <link rel="stylesheet" type="text/css" href="<?= site_url()?>assets/csslib/icomoon.css">
         <link rel="stylesheet" type="text/css" href="<?= site_url()?>assets/csslib/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" type="text/css" href="<?= site_url()?>assets/css/bootstrap-custom.css">
-        <link rel="stylesheet" type="text/css" id="savvyStyle" href="<?= site_url()?>assets/css/<?=get_cookie('lang')=='ar'?'main-skin-style5_ar.css':'main-skin-style5.css'?>">
+        <link rel="stylesheet" type="text/css" id="savvyStyle" href="<?= site_url()?>assets/css/<?=get_cookie('lang')=='ar'?$data->file.'_ar.css':$data->file.'.css'?>">
         <!-- end stylesheets -->
     </head>
     <body class="layout-body layout-body--home">
         <div class="fixedLeft lang">
             <?php if (get_cookie('lang')=='ar'):?>
-            <a href="<?= site_url('site/lang/en') ?>"><img src="<?= site_url('assets/images/en_lang.png') ?>" /></a>
+            <a style="position: fixed;right: 170px;" href="<?= site_url('site/lang/en') ?>">English</a>
             <?php else: ?>
-            <a href="<?= site_url('site/lang/ar') ?>"><img src="<?= site_url('assets/images/ar_lang.png') ?>" /></a>
+            <a href="<?= site_url('site/lang/ar') ?>"  style="position: fixed;left: 145px;">عربى</a>
             <?php endif; ?>
             
             
@@ -107,31 +107,48 @@
                     </div>
                     <!-- .social-icons -->
                     <ul class="social-icons">
+                       <?php if($data->Twitter !='' &&$data->Twitter !=NULL):?>
                         <li>
                             <a href="<?=$data->Twitter?>" target="_blank" class="social-icon--twitter">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
+                        <?php endif;?>
+                        <?php if($data->Facebook !='' &&$data->Facebook !=NULL):?>
                         <li>
                             <a href="<?=$data->Facebook?>" target="_blank" class="social-icon--facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
+                        <?php endif;?>
+                        <?php if($data->Snapchat !='' &&$data->snapchat !=NULL):?>
                         <li>
                             <a href="<?=$data->Snapchat?>" target="_blank" class="social-icon--snapchat">
                                 <i class="fa fa-snapchat-ghost"></i>
                             </a>
                         </li>
+                        <?php endif;?>
+                        <?php if($data->Instagram !='' &&$data->Instagram !=NULL):?>
                         <li>
                             <a href="<?=$data->Instagram?>" target="_blank" class="social-icon--instagram">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </li>
+                        <?php endif;?>
+                        <?php if($data->Youtube !='' &&$data->Youtube !=NULL):?>
                         <li>
                             <a href="<?=$data->Youtube?>" target="_blank" class="social-icon--youtube">
                                 <i class="fa fa-youtube"></i>
                             </a>
                         </li>
+                        <?php endif;?>
+                        <?php if($data->linkedin !='' &&$data->linkedin !=NULL):?>
+                        <li>
+                            <a href="<?=$data->linkedin?>" target="_blank" class="social-icon--linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <?php endif;?>
                     </ul>
                     <!-- end .social-icons -->
                     <footer class="footer">

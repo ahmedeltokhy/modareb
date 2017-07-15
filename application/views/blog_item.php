@@ -56,7 +56,6 @@
                                     <div class="share-box__item share-box__item--facebook" data-btntype="facebook" data-title="&nbsp;"></div>
                                     <div class="share-box__item share-box__item--twitter" data-btntype="twitter" data-title="&nbsp;"></div>
                                     <div class="share-box__item share-box__item--gplus" data-btntype="googlePlus" data-title="&nbsp;"></div>
-                                    <div class="share-box__item share-box__item--pinterest" data-btntype="pinterest" data-title="&nbsp;"></div>
                                     <div class="share-box__item share-box__item--linkedin" data-btntype="linkedin" data-title="&nbsp;"></div>
                                 </div>
                             </div>
@@ -108,10 +107,10 @@
                                             <input id="post_id" value="<?=$item_data->id?>" name="post_id" type="hidden" />
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <input name="name" id="name" class="form__item" required="required" type="text" placeholder="name">
+                                                    <input name="name" id="name" class="form__item" required="required" type="text" placeholder="name"  <?=($this->session->userdata('modarebLogin'))?'disabled = "disabled" value="admin"':''?>>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input id="email" name="email" class="form__item" required="required" type="email" placeholder="email">
+                                                    <input id="email" name="email" class="form__item" required="required" type="email" placeholder="email"   <?=($this->session->userdata('modarebLogin'))?'disabled = "disabled" value="admin@admin.com"':''?>>
                                                 </div>
                                             </div>
                                             <textarea name="message" class="form__textarea form__item" required="required" id="message" placeholder="message"></textarea>
@@ -127,7 +126,7 @@
                 </div>
                 <!-- end .layout-content -->
                 <div class="footer--bottom layout-row">
-                    <p class="footer__copyright">&copy; Rossi, 2015. All rights reserved.</p>
+                    <!--<p class="footer__copyright">&copy; Rossi, 2015. All rights reserved.</p>-->
                 </div>
             </div>
   

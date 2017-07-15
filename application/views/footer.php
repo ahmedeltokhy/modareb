@@ -36,7 +36,7 @@
         </style>
         <!--End AAA Modification-->
         <!-- .style-panel -->
-        <div class="style-panel" style="display:none">
+<!--        <div class="style-panel" style="display:none">
             <div class="style-panel__button">
                 <i class="fa fa-paint-brush"></i>
             </div>
@@ -54,7 +54,7 @@
                 <button class="btn-reset btn btn-xs btn--style1">reset</button>
             </div>
         </div>
-        <!-- end .style-panel -->
+         end .style-panel -->
         <!-- style panel assets -->
         <script type="text/javascript" src="assets/jslib/jquery.cookie.js"></script>
         <script type="text/javascript" src="assets/js/StylePanel.js"></script>

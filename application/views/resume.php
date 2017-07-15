@@ -4,7 +4,7 @@
         <section class="page-resume">
             <div class="layout-title-wrapper layout-row">
                 <h1 class="layout-title layout-container-width layout-container"><?= get_cookie('lang')=='ar'?'السيرة الذاتية':$title ?>.
-                    <span class="layout-title__subtitle"><?=get_cookie('lang')=='ar'?'محدثة':'Up-to-date'?></span>
+                    <span class="layout-title__subtitle"><a href="<?= site_url()?>assets\uploads\CV\<?=$data->CV?>"><?=get_cookie('lang')=='ar'?'تحميل':'Download'?></a></span>
                 </h1>
             </div>
             <div class="layout-row">
@@ -15,7 +15,7 @@
                             <i class="accordion-title__icon fa fa-suitcase"></i><?=get_cookie('lang')=='ar'?'الخبرات':'Experience'?>
                             <i class="accordion-title__state-icon fa "></i>
                         </h2>
-                        <div id="collapse0" class="accordion-item__panel collapse in">
+                        <div id="collapse0" class="accordion-item__panel collapse">
                             <!-- .timeline -->
                             <div class="timeline timeline--layout layout-container">
                                 <?php
@@ -28,7 +28,7 @@
                                         $first = false;
                                     endif;
                                     $start_date = date_format(date_create($item->start_date), "M Y");
-                                    $leave_date = ($item->leave_date != '0000-00-00') ? date_format(date_create($item->leave_date), "M Y") : get_cookie('lang')=='ar'?'الأن':'Now';
+                                    $leave_date = ($item->leave_date != NULL) ? date_format(date_create($item->leave_date), "M Y") : (get_cookie('lang')=='ar'?'الأن':'Now');
                                     ?>
                                     <div class="timeline-item">
                                         <div class="timeline-item__col timeline-item__col--info">
